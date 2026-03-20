@@ -13,7 +13,7 @@ html {
 
 body {
     background-color: #0f0f0f;
-    font-family: Iosevka Charon Mono;
+    font-family: Arimo;
     margin: 0;
 }
 
@@ -331,7 +331,83 @@ nav {
 }
 
 
+/* WHY US SEC */
 
+.why-us {
+  padding: 80px 20px;
+  background: #1a1a1a;
+  color: white;
+}
+
+.why-container {
+  max-width: 900px;
+  margin: 0 auto;
+  text-align: center;
+  background: #222222;
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-left: 4px solid #8B0000;
+  border-radius: 10px;
+  padding: 40px 30px;
+  box-shadow: 0 10px 24px rgba(0, 0, 0, 0.25);
+}
+
+.why-container h2 {
+  font-size: clamp(2rem, 4vw, 3rem);
+  margin-bottom: 30px;
+}
+
+.why-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: grid;
+  gap: 16px;
+}
+
+.why-list li {
+  font-size: 1.1rem;
+  color: #d6d6d6;
+  background: #1c1c1c;
+  padding: 16px 20px;
+  border-radius: 8px;
+  border-left: 3px solid #D62828;
+  text-align: left;
+  position: relative;
+  padding-left: 48px;
+}
+
+.why-list li::before {
+  content: "✔";
+  position: absolute;
+  left: 18px;
+  top: 50%;
+  transform: translateY(-50%);
+  color: #D62828;
+  font-weight: bold;
+}
+
+@media (max-width: 768px) {
+  .why-us {
+    padding: 60px 16px;
+  }
+
+  .why-container {
+    padding: 28px 20px;
+  }
+
+  .why-container h2 {
+    margin-bottom: 20px;
+  }
+
+  .why-list li {
+    font-size: 1rem;
+    padding: 14px 16px 14px 42px;
+  }
+
+  .why-list li::before {
+    left: 14px;
+  }
+}
 
 /* FADE-IN ELEMENTS */
 
@@ -346,6 +422,17 @@ nav {
   transform: translateY(0);
 }
 
+.fade-in-item {
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity 0.6s ease, transform 0.6s ease;
+}
+
+.fade-in-item.show {
+  opacity: 1;
+  transform: translateY(0);
+}
+
 /* staggers */
 
 .services-grid .service-card:nth-child(1) { transition-delay: 0.1s; }
@@ -354,3 +441,8 @@ nav {
 .services-grid .service-card:nth-child(4) { transition-delay: 0.4s; }
 .services-grid .service-card:nth-child(5) { transition-delay: 0.5s; }
 .services-grid .service-card:nth-child(6) { transition-delay: 0.6s; }
+
+.why-list .fade-in-item:nth-child(1) { transition-delay: 0.1s; }
+.why-list .fade-in-item:nth-child(2) { transition-delay: 0.2s; }
+.why-list .fade-in-item:nth-child(3) { transition-delay: 0.3s; }
+.why-list .fade-in-item:nth-child(4) { transition-delay: 0.4s; }
