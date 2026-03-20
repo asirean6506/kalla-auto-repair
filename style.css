@@ -303,6 +303,11 @@ nav {
   margin-bottom: 10px;
 }
 
+.service-card i {
+  color: #D62828;
+  margin-right: 10px;
+}
+
 .services-header h2 {
   margin-bottom: 10px;
 }
