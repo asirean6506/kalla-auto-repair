@@ -249,7 +249,7 @@ nav {
 
 .hero-buttons {
   display: flex;
-  gap: 14px;
+  gap: 16px;
   justify-content: flex-start;
   margin-top: 28px;
   flex-wrap: wrap;
