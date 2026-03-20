@@ -55,37 +55,53 @@
 
   <div class="services-grid">
     
-    <div class="service-card">
+    <div class="service-card fade-in">
       <h3><i class="fa-solid fa-wrench"></i> Auto Repair</h3>
       <p>Reliable repair services to keep your vehicle running safely and smoothly.</p>
     </div>
 
-    <div class="service-card">
+    <div class="service-card fade-in">
       <h3><i class="fa-solid fa-magnifying-glass"></i> Diagnostics</h3>
       <p>Accurate diagnosis to identify issues quickly and get you back on the road.</p>
     </div>
 
-    <div class="service-card">
+    <div class="service-card fade-in">
       <h3><i class="fa-solid fa-oil-can"></i> Oil Changes</h3>
       <p>Routine oil changes to protect your engine and maintain performance.</p>
     </div>
 
-    <div class="service-card">
+    <div class="service-card fade-in">
       <h3><i class="fa-solid fa-car-side"></i> Brake Service</h3>
       <p>Brake inspections and service to help keep you safe in every condition.</p>
     </div>
 
-    <div class="service-card">
+    <div class="service-card fade-in">
       <h3><i class="fa-solid fa-screwdriver-wrench"></i> Preventative Maintenance</h3>
       <p>Scheduled upkeep that helps prevent costly repairs down the line.</p>
     </div>
 
-    <div class="service-card">
+    <div class="service-card fade-in">
       <h3><i class="fa-solid fa-gear"></i> General Service</h3>
       <p>From basic checkups to everyday vehicle issues, we’re here to help.</p>
     </div>
 
   </div>
 </section>
+
+<script>
+  const fadeElements = document.querySelectorAll(".fade-in");
+
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach((entry) => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add("show");
+      }
+    });
+  }, {
+    threshold: 0.2
+  });
+
+  fadeElements.forEach((el) => observer.observe(el));
+</script>
 </body>
 </html>
