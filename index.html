@@ -18,9 +18,9 @@
 <body>
     <nav>
       <div class="navbar">
-        <h1>Kalla Auto Repair</h1>
+        <h1 class="brand">Kalla Auto Repair</h1>
 
-        <button class="hamburger" aria-label="Open menu">
+        <button class="hamburger" aria-label="Open menu" aria-expanded="false">
             <span></span>
             <span></span>
             <span></span>
@@ -28,13 +28,14 @@
 
         <ul class="nav-links">
             <li><a href="#top">Home</a></li>
-            <li><a href="#flavor-landing">Services</a></li>
-            <li><a href="#contact-landing">Contact</a></li>
+            <li><a href="#services">Services</a></li>
+            <li><a href="#why-us">Why Us</a></li>
+            <li><a href="#contact">Contact Us</a></li>
         </ul>
       </div>
     </nav>
 
-    <div class="hero">
+    <div class="hero" id="top">
         <div class="hero-text">
             <h1>Kalla Auto Repair</h1>
             <h2>Reliable Auto Service you can trust.</h2>
@@ -47,7 +48,7 @@
         </div>
     </div>
 
-    <section class="services">
+    <section class="services" id="services">
   <div class="services-header">
     <h2>Our Services</h2>
     <p>Dependable vehicle care by appointment, with honest service you can trust.</p>
@@ -88,7 +89,7 @@
   </div>
 </section>
 
-    <section class="why-us">
+    <section class="why-us" id="why-us">
         <div class="why-container fade-in">
             <h2>Why Choose Kalla?</h2>
             <ul class="why-list">
@@ -100,9 +101,63 @@
         </div>
     </section>
 
+    <section class="contact-section" id="contact">
+  <div class="contact-container fade-in">
+    <div class="contact-copy">
+      <h2>Request an Appointment</h2>
+      <p>Need reliable service? Call us today or reach out to schedule an appointment.</p>
+
+      <div class="contact-info">
+        <p><strong>Phone:</strong> <a href="tel:1234567890">(123) 456-7890</a></p>
+        <p><strong>Hours:</strong> Mon–Fri, 8:00 AM – 5:00 PM</p>
+        <p><strong>Location:</strong> Your City, State</p>
+      </div>
+    </div>
+
+    <div class="contact-actions">
+      <a href="tel:1234567890" class="call-btn">Call Now</a>
+      <a href="mailto:info@kallaautorepair.com" class="secondary-btn">Email Us</a>
+    </div>
+  </div>
+</section>
 
 
 <script>
+  const fadeElements = document.querySelectorAll(".fade-in, .fade-in-item");
+
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach((entry) => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add("show");
+      }
+    });
+  }, {
+    threshold: 0.2
+  });
+
+  fadeElements.forEach((el) => observer.observe(el));
+</script>
+
+<script>
+  const hamburger = document.querySelector(".hamburger");
+  const navLinks = document.querySelector(".nav-links");
+
+  hamburger.addEventListener("click", () => {
+    hamburger.classList.toggle("active");
+    navLinks.classList.toggle("active");
+
+    const expanded = hamburger.classList.contains("active");
+    hamburger.setAttribute("aria-expanded", expanded);
+  });
+
+  document.querySelectorAll(".nav-links a").forEach(link => {
+    link.addEventListener("click", () => {
+      hamburger.classList.remove("active");
+      navLinks.classList.remove("active");
+      hamburger.setAttribute("aria-expanded", "false");
+    });
+  });
+
   const fadeElements = document.querySelectorAll(".fade-in, .fade-in-item");
 
   const observer = new IntersectionObserver((entries) => {

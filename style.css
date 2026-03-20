@@ -12,9 +12,11 @@ html {
 }
 
 body {
-    background-color: #0f0f0f;
-    font-family: Arimo;
-    margin: 0;
+  background-color: #0f0f0f;
+  font-family: "Arimo", sans-serif;
+  color: white;
+ line-height: 1.6;
+ margin: 0;
 }
 
 .arimo-regular {
@@ -31,20 +33,38 @@ body {
   font-style: normal;
 }
 
-a {
-  text-decoration: none;
+p,
+button,
+a,
+li {
+  font-family: "Arimo", sans-serif;
 }
 
-p {
-    font-family: Iosevka Charon Mono;
+.hero-text h1,
+.services-header h2,
+.why-container h2,
+.contact-container h2,
+.brand {
+  font-family: "Arimo", sans-serif;
+  letter-spacing: 0.3px;
 }
 
-h2 {
-    font-size: 50px;
+section {
+  padding: 90px 20px;
 }
 
-button {
-    font-family: Iosevka Charon Mono;
+.services,
+.why-us,
+.contact-section {
+  padding-left: 20px;
+  padding-right: 20px;
+}
+
+.services-header,
+.why-container,
+.contact-container {
+  max-width: 1200px;
+  margin: 0 auto;
 }
 
 nav {
@@ -62,12 +82,10 @@ nav {
   position: relative;
 }
 
-.logo {
-  height: 55px;
-  width: auto;
-  display: block;
-  flex-shrink: 0;
-  padding-right: 10px;
+.brand {
+  font-size: 1.25rem;
+  font-weight: 700;
+  color: white;
 }
 
 .nav-links {
@@ -87,15 +105,15 @@ nav {
 }
 
 .nav-links a {
-  display: block;
-  width: 100%;
-  padding: 14px 16px;
   color: white;
-  text-decoration: none;
+  font-weight: 600;
+  border-radius: 999px;
+  transition: background 0.25s ease, color 0.25s ease, transform 0.25s ease;
 }
 
 .nav-links a:hover {
-  background: #8B0000;
+  background: rgba(214, 40, 40, 0.15);
+  color: #ffffff;
   border-radius: 25px;
 }
 
