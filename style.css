@@ -35,9 +35,13 @@ body {
 
 p,
 button,
-a,
 li {
   font-family: "Arimo", sans-serif;
+}
+
+a {
+  font-family: "Arimo", sans-serif;
+  text-decoration: none;
 }
 
 .hero-text h1,
